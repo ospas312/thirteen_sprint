@@ -6,7 +6,7 @@
 *13_sprint_Nodejs_expressjs_Mongodb*
 
     Основная задача узнать основы работы с Базой данных.
-    Установил Node.js и express.js , подключил линтер ESLint и его зависимости.
+    Установил Node.js и express.js , подключил линтер ESLint и его зависимости..
 
 
 
