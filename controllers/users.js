@@ -14,7 +14,10 @@ module.exports.getUsers = (req, res) => {
 };
 
 module.exports.getUserById = (req, res) => {
-  User.findById(req.params.id).orFail(() => res.send({ message: 'Not found user' }))
+  User.findById(req.params.id)
+    .orFail(() => {
+      throw new Error();
+    })
     .then((user) => res.send({ data: user }))
     .catch(() => res.status(404).send({ message: 'Not found user' }));
 };
