@@ -19,7 +19,7 @@ module.exports.getUserById = (req, res) => {
       throw new Error();
     })
     .then((user) => res.send({ data: user }))
-    .catch(() => res.status(404).send({ message: 'Not found user' }));
+    .catch(() => res.status(404).send({ message: 'Not found user id' }));
 };
 
 module.exports.updateUser = (req, res) => {
@@ -33,5 +33,5 @@ module.exports.updateUserAvatar = (req, res) => {
   const { avatar } = req.body;
   User.findByIdAndUpdate(req.user._id, { avatar }, { new: true, runValidators: true })
     .then((user) => res.send({ data: user }))
-    .catch(() => res.status(404).send({ message: 'Произошла ошибка' }));
+    .catch(() => res.status(404).send({ message: 'Not found user or not correct url' }));
 };
